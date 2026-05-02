@@ -6,6 +6,9 @@ import { AuthProvider } from "@/context/AuthContext"; // 👈 add
 
 export const metadata = {
   title: "Qurbani Hat",
+ icons: {
+  icon: "/favicon.png",
+ },
 };
 
 export default function RootLayout({ children }) {

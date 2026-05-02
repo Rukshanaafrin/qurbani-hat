@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function AnimalCard({ animal }) {
   return (
-    <div className="card bg-base-100 shadow">
+    <div className="card bg-gray-100 shadow">
       <figure>
         <img
           src={animal.image}
