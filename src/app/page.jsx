@@ -1,4 +1,4 @@
-import "animate.css";
+import "animate.css/animate.min.css";
 import animals from "@/data/animals.json";
 import AnimalCard from "@/components/AnimalCard";
 

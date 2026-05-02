@@ -4,7 +4,7 @@
 👉 https://your-live-link.vercel.app
 
 ## 📂 GitHub Repository
-👉 https://github.com/your-username/qurbani-hat
+👉 https://github.com/Rukshanaafrin/qurbani-hat
 
 ---
 

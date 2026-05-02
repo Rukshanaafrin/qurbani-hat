@@ -1,6 +1,6 @@
 import animals from "@/data/animals.json";
 import BookingForm from "@/components/BookingForm";
-import PrivateRoute from "@/components/PrivateRoute"; // 👈 add
+import PrivateRoute from "@/components/PrivateRoute";
 
 export default async function DetailsPage({ params }) {
   const { id } = await params;
@@ -12,31 +12,77 @@ export default async function DetailsPage({ params }) {
   }
 
   return (
-    <PrivateRoute> {/* 👈 add */}
-      <div className="max-w-3xl mx-auto mt-10 text-center">
-        <img
-          src={animal.image}
-          className="w-full max-w-md h-80 object-cover mx-auto rounded-lg shadow"
-        />
+    <PrivateRoute>
+      <div className="max-w-5xl mx-auto mt-10 px-4">
 
-        <h1 className="text-3xl font-bold mt-4 text-center">
-          {animal.name}
-        </h1>
+        {/* Main Card */}
+        <div className="bg-gradient-to-br from-green-50 to-white shadow-xl rounded-3xl p-6 md:p-10">
 
-        <div className="text-center mt-4 space-y-1">
-          <p>Type: {animal.type}</p>
-          <p>Breed: {animal.breed}</p>
-          <p>Price: {animal.price} BDT</p>
-          <p>Weight: {animal.weight} kg</p>
-          <p>Age: {animal.age} years</p>
-          <p>Location: {animal.location}</p>
+          {/* Image */}
+          <div className="flex justify-center">
+            <img
+              src={animal.image}
+              className="w-full md:w-[500px] h-64 object-cover rounded-xl shadow-lg hover:scale-105 transition duration-300"
+            />
+          </div>
+
+          {/* Title */}
+          <h1 className="text-3xl font-bold text-center mt-6 text-green-700">
+            {animal.name}
+          </h1>
+
+          {/* Info Grid */}
+          <div className="grid md:grid-cols-3 gap-4 mt-6 text-black">
+
+            <div className="bg-white shadow rounded-xl p-3">
+              <p className="font-semibold">Type</p>
+              <p>{animal.type}</p>
+            </div>
+
+            <div className="bg-white shadow rounded-xl p-3">
+              <p className="font-semibold">Breed</p>
+              <p>{animal.breed}</p>
+            </div>
+
+            <div className="bg-white shadow rounded-xl p-3">
+              <p className="font-semibold">Price</p>
+              <p>৳ {animal.price}</p>
+            </div>
+
+            <div className="bg-white shadow rounded-xl p-3">
+              <p className="font-semibold">Weight</p>
+              <p>{animal.weight} kg</p>
+            </div>
+
+            <div className="bg-white shadow rounded-xl p-3">
+              <p className="font-semibold">Age</p>
+              <p>{animal.age} years</p>
+            </div>
+
+            <div className="bg-white shadow rounded-xl p-3">
+              <p className="font-semibold">Location</p>
+              <p>{animal.location}</p>
+            </div>
+
+          </div>
+
+          {/* Description */}
+          <p className="text-center text-gray-600 mt-6 italic max-w-2xl mx-auto">
+            {animal.description}
+          </p>
+
+          {/* Divider */}
+          <div className="divider my-8 text-green-700 font-semibold">
+            Book This Animal
+          </div>
+
+          {/* Booking Form Card */}
+          <div className="bg-white shadow-lg rounded-2xl p-5">
+            <BookingForm />
+          </div>
+
         </div>
-
-        <p className="mt-4 text-center">{animal.description}</p>
-
-        {/* 🔥 Booking Form */}
-        <BookingForm />
       </div>
-    </PrivateRoute> // 👈 add
+    </PrivateRoute>
   );
 }
