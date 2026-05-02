@@ -18,25 +18,35 @@ export default function Navbar() {
 
       <div className="flex gap-4 items-center">
 
-
+        {/* Home */}
         <Link
           href="/"
-          className={`hover:text-green-600 ${pathname === "/" ? "text-green-600 font-bold underline" : ""
-            }`}
+          className={`hover:text-green-600 ${
+            pathname === "/" ? "text-green-600 font-bold underline" : ""
+          }`}
         >
           Home
         </Link>
 
+        {/* Animals */}
         <Link
           href="/animals"
-          className={`hover:text-green-600 ${pathname === "/animals" ? "text-green-600 font-bold underline" : ""
-            }`}
+          className={`hover:text-green-600 ${
+            pathname === "/animals" ? "text-green-600 font-bold underline" : ""
+          }`}
         >
           All Animals
         </Link>
 
+        {/* Auth Section */}
         {user ? (
           <>
+            {/* Profile Button */}
+            <Link href="/my-profile" className="btn btn-sm btn-outline">
+              Profile
+            </Link>
+
+            {/* Logout */}
             <button onClick={logout} className="btn btn-sm btn-error">
               Logout
             </button>

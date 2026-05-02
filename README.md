@@ -1,4 +1,10 @@
-# 🐄 QurbaniHat – Livestock Booking Platform
+# QurbaniHat – Livestock Booking Platform
+
+## 🌐 Live Site
+👉 https://your-live-link.vercel.app
+
+## 📂 GitHub Repository
+👉 https://github.com/your-username/qurbani-hat
 
 ---
 
@@ -60,10 +66,3 @@ firebase
 react-hot-toast
 animate.css
 
----
-
-## 🌐 Live Site
-👉 https://your-live-link.vercel.app
-
-## 📂 GitHub Repository
-👉 https://github.com/your-username/qurbani-hat
