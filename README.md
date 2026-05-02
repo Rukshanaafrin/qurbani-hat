@@ -1,7 +1,7 @@
 # QurbaniHat – Livestock Booking Platform
 
 ## 🌐 Live Site
-👉 https://your-live-link.vercel.app
+👉 afrins-qurbani-hat-website.netlify.app
 
 ## 📂 GitHub Repository
 👉 https://github.com/Rukshanaafrin/qurbani-hat
