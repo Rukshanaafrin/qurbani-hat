@@ -2,9 +2,11 @@
 
 import Link from "next/link";
 import { useAuth } from "@/context/AuthContext";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const { user, logout } = useAuth();
+  const pathname = usePathname();
 
   return (
     <div className="navbar bg-base-100 shadow-md px-6">
@@ -15,25 +17,40 @@ export default function Navbar() {
       </div>
 
       <div className="flex gap-4 items-center">
-        <Link href="/" className="hover:text-green-600">Home</Link>
-        <Link href="/animals" className="hover:text-green-600">All Animals</Link>
 
-        {
-          user ? (
-            <>
-              
-              <button onClick={logout} className="btn btn-sm btn-error">
-                Logout
-              </button>
-            </>
-          ) : (
-            <>
-              <Link href="/login" className="btn btn-sm btn-outline">Login</Link>
-              <Link href="/register" className="btn btn-sm btn-primary">Register</Link>
-            </>
-          )
-        }
 
+        <Link
+          href="/"
+          className={`hover:text-green-600 ${pathname === "/" ? "text-green-600 font-bold underline" : ""
+            }`}
+        >
+          Home
+        </Link>
+
+        <Link
+          href="/animals"
+          className={`hover:text-green-600 ${pathname === "/animals" ? "text-green-600 font-bold underline" : ""
+            }`}
+        >
+          All Animals
+        </Link>
+
+        {user ? (
+          <>
+            <button onClick={logout} className="btn btn-sm btn-error">
+              Logout
+            </button>
+          </>
+        ) : (
+          <>
+            <Link href="/login" className="btn btn-sm btn-outline">
+              Login
+            </Link>
+            <Link href="/register" className="btn btn-sm btn-primary">
+              Register
+            </Link>
+          </>
+        )}
       </div>
     </div>
   );
